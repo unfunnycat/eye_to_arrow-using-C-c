@@ -1,4 +1,19 @@
+#include <opencv2/opencv.hpp>
 #include <iostream>
+using namespace cv;
+using namespace std;
 
-using namespace std; 
-u
+int main() {
+    // Load Haar Cascade for eye detection
+    CascadeClassifier eye_cascade;
+    if(!eye_cascade.load("haarcascade_eye.xml")) {
+        cout << "Error loading eye cascade\n";
+        return -1;
+    }
+
+    VideoCapture cap(0);
+    if(!cap.isOpened()) {
+        cout << "Cannot open camera\n";
+        return -1;
+    }
+

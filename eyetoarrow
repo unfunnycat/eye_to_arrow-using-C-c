@@ -16,4 +16,5 @@ int main() {
         cout << "Cannot open camera\n";
         return -1;
     }
+//still raw fix it next day
 
